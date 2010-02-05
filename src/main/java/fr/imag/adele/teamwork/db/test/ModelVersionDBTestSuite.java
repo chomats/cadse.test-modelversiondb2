@@ -27,13 +27,13 @@ public class ModelVersionDBTestSuite {
 	public static Test suite(BundleContext bc) {
         DBOSGiTestSuite ots = new DBOSGiTestSuite("Tests of ModelVersionDBService", bc);
         
-        DBOSGiTestSuite mysqlTestSuite = new DBOSGiTestSuite("Tests of ModelVersionDBService with MySQL", bc);
-        mysqlTestSuite.addTestSuite(ModelVersionDBTestCase.class, "mysql", "localhost", 3306, "TestModelDB", "root", "ertdfg");
-        ots.addTestSuite(mysqlTestSuite);
-        
-        DBOSGiTestSuite oracleTestSuite = new DBOSGiTestSuite("Tests of ModelVersionDBService with Oracle", bc);
-        oracleTestSuite.addTestSuite(ModelVersionDBTestCase.class, "oracle:thin", "localhost", 1521, "XE", "thomas", "thomasPwd");
-        ots.addTestSuite(oracleTestSuite);
+//        DBOSGiTestSuite mysqlTestSuite = new DBOSGiTestSuite("Tests of ModelVersionDBService with MySQL", bc);
+//        mysqlTestSuite.addTestSuite(ModelVersionDBTestCase.class, "mysql", "localhost", 3306, "TestModelDB", "root", "ertdfg");
+//        ots.addTestSuite(mysqlTestSuite);
+//        
+//        DBOSGiTestSuite oracleTestSuite = new DBOSGiTestSuite("Tests of ModelVersionDBService with Oracle", bc);
+//        oracleTestSuite.addTestSuite(ModelVersionDBTestCase.class, "oracle:thin", "localhost", 1521, "XE", "thomas", "thomasPwd");
+//        ots.addTestSuite(oracleTestSuite);
         
         DBOSGiTestSuite hsqlTestSuite = new DBOSGiTestSuite("Tests of ModelVersionDBService with HSQLDB", bc);
         hsqlTestSuite.addTestSuite(ModelVersionDBTestCase.class, "hsqldb:hsql", "localhost", 9002, "TestModelDB", "sa", "");
