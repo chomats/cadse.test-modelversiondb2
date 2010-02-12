@@ -58,7 +58,7 @@ public class DBOSGiTestSuite extends OSGiTestSuite {
 	}
 	
 	public void addTestSuite(DBOSGiTestSuite suite) {
-		suite.setBundleContext(context);
+		suite.setBundleContext(m_context);
 		addTest(suite);
 	}
 
@@ -68,7 +68,7 @@ public class DBOSGiTestSuite extends OSGiTestSuite {
     public void addTestSuite(Class testClass, String dbSpecificURLPart, String host, 
 			int port, String dbName, String login, String pwd) {
     	if (ModelVersionDBTestCase.class.isAssignableFrom(testClass)) {
-    		DBOSGiTestSuite testSuite = new DBOSGiTestSuite(testClass, context);
+    		DBOSGiTestSuite testSuite = new DBOSGiTestSuite(testClass, m_context);
     		testSuite.setConnectionParams(dbSpecificURLPart, host, port, dbName, login, pwd);
             addTest(testSuite);
         } else 
@@ -77,11 +77,11 @@ public class DBOSGiTestSuite extends OSGiTestSuite {
     
     public void runTest(Test test, TestResult result) {
         if (test instanceof DBOSGiTestSuite) {
-            ((OSGiTestSuite) test).setBundleContext(context);
+            ((OSGiTestSuite) test).setBundleContext(m_context);
             //((DBOSGiTestSuite) test).setConnectionParams(_dbSpecificURLPart, _host, _port, _dbName, _login, _pwd);
             test.run(result);
         } else if (test instanceof ModelVersionDBTestCase) {
-            ((OSGiTestCase) test).setBundleContext(context);
+            ((OSGiTestCase) test).setBundleContext(m_context);
             ((ModelVersionDBTestCase) test).setConnectionParams(_dbSpecificURLPart, _host, _port, _dbName, _login, _pwd);
             test.run(result);
         } else 
