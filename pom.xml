@@ -62,8 +62,8 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-            <Bundle-Name>${pom.name}</Bundle-Name>
-  			<Bundle-Description>${pom.name}</Bundle-Description>
+            <Bundle-Name>${project.name}</Bundle-Name>
+  			<Bundle-Description>${project.name}</Bundle-Description>
             <Export-Package>fr.imag.adele.teamwork.db.test</Export-Package>
             <Test-Suite>fr.imag.adele.teamwork.db.test.ModelVersionDBTestSuite</Test-Suite>
             <Private-Package>
