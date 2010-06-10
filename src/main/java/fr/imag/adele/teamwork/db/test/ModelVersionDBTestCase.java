@@ -43,10 +43,12 @@ public class ModelVersionDBTestCase extends OSGiTestCase {
 		}
 		if ((m_sr != null) && (m_db == null)) {
 			m_db = (ModelVersionDBService) context.getService(m_sr);
-			m_db.setConnectionURL(_url, _login, _pwd);
 			try {
+				m_db.setConnectionURL(_url, _login, _pwd);
 				m_db.clear();
 			} catch (ModelVersionDBException e) {
+				e.printStackTrace();
+			} catch (DBConnectionException e) {
 				e.printStackTrace();
 			}
 		}
